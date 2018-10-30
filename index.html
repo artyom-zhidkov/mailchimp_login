@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
+    <title>Task №1. Artyom Zhidkov</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+    <div class="parent">
+        <div class="sidebar">
+            <img class="logo_images" src="images/logo.png" alt="">
+            <div class="log_In_text_style">Log In</div>
+            <div class="text_basic">Need a Mailchimp account?</div>
+            <a class="text_link_blue">Create&nbspan&nbspaccount</a>
+            
+            <form action="#">
+                <fieldset>
+                    <label for="id_username" class="class_for_label">Username</label>
+                    <input id="id_username" class="input_style" type="email" autocomplete="on">
+                    <div class="password_header class_for_label">
+                       
+                        <label for="id_input_password">Password</label>
+                        
+                        <div id="eye_and_text">
+                            <i id="id_show_hide" class="far fa-eye"></i><span id="id_show_hide_for_span">Show</span>
+                        </div>
+                        
+                    </div>
+                    <input id="id_input_password" class="input_style" type="password" autocomplete="on">
+                    <button type="submit" form="" class="blue_button">Log In</button>
+                                                                           
+                    <input id="checkbox_after_form" tabindex="0" type="checkbox">
+                    
+                    <label class="class_for_label_checkbox flex_align" for="checkbox_after_form">
+                    <span>Keep me logged in</span>
+                    </label>
+                    
+                    <div class="flex_align">
+                        <a class="text_link_blue">Forgot username?</a>
+                        <span class="mlr5px">·</span>
+                        <a class="text_link_blue">Forgot password?</a>
+                    </div>
+                    <br>
+                    <span class="pt30px grey_mini_font">©2001–2018 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group. <a>Cookie Preferences</a>, <a>Privacy</a>, and <a>Terms</a>.</span>
+                </fieldset>
+            </form>
+        </div>
+        
+        <div class="picture">
+            <div class="picture-text">Segmentation helps this dynamic retail duo build<br> better customer relationships and sell more stuff.</div>
+            <a href="#" class="button_style">Learn Their Strategy</a>
+        </div>
+    </div>   
+    <script>
+        var show_hide = true;
+        function changeEye(e) {
+             if (show_hide) {
+                document.getElementById('id_input_password').type = "text";
+                id_show_hide.className = "far fa-eye-slash";
+                document.getElementById('id_show_hide_for_span').textContent = "Hide";
+                id_input_password.focus();
+                show_hide = false;
+               
+            } else {
+                document.getElementById('id_input_password').type = "password";
+                document.getElementById('id_show_hide').className = "far fa-eye";
+                document.getElementById('id_show_hide_for_span').textContent = "Show";
+                document.getElementById('id_input_password').focus();
+                show_hide = true;
+            }
+        }
+        document.getElementById("eye_and_text").addEventListener('click',changeEye);
+    </script> 
+</body>
+</html>
