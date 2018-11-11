@@ -2,79 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet"> <!--basic text rigth side-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet"> <!--for LOGIN header text-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet"> <!--basic text left side-->
     <title>Task №1. Artyom Zhidkov</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <!--dfdfdf-->
 <body>
-    <div class="parent">
+    <div class="flex">
         <div class="sidebar">
             <img class="logo_images" src="images/logo.png" alt="">
-            <div class="log_In_text_style">Log In</div>
-            <div class="text_basic">Need a Mailchimp account?</div>
-            <a class="text_link_blue">Create&nbspan&nbspaccount</a>
-            
-            <form action="#">
-                <fieldset>
-                    <label for="id_username" class="class_for_label">Username</label>
-                    <input id="id_username" class="input_style" type="email" autocomplete="on">
-                    <div class="password_header class_for_label">
-                       
-                        <label for="id_input_password">Password</label>
-                        
-                        <div id="eye_and_text">
-                            <i id="id_show_hide" class="far fa-eye"></i><span id="id_show_hide_for_span">Show</span>
-                        </div>
-                        
+            <div class="headline_big padding_15px">Log In</div>
+            <span>Need a Mailchimp account?</span>
+            <a href="#" class="color_blue">Create&nbspan&nbspaccount</a>
+            <div id="text-message-error">Hello</div>
+            <form action="#" onsubmit="return false" id="form-login">
+                <label for="input__username" class="flex sidebar__form__label font_weight500 select_none">Username</label>
+                <input id="input__username" class="sidebar__form__input" type="email" autocomplete="on">
+                <div class="flex flex_space_between sidebar__form__label font_weight500">
+                    <label for="input__password" class="font_weight500 select_none">Password</label>
+                    <div id="input__graphic__label" class="input__graphic__label color_blue cursor_pointer select_none">
+                        <i id="input_graphic_label_icon_eye" class="far fa-eye"></i>
+                        <span id="graphic_label_text" class="float_rigth">Show</span>
                     </div>
-                    <input id="id_input_password" class="input_style" type="password" autocomplete="on">
-                    <button type="submit" form="" class="blue_button">Log In</button>
-                                                                           
-                    <input id="checkbox_after_form" tabindex="0" type="checkbox">
-                    
-                    <label class="class_for_label_checkbox flex_align" for="checkbox_after_form">
-                    <span>Keep me logged in</span>
-                    </label>
-                    
-                    <div class="flex_align">
-                        <a class="text_link_blue">Forgot username?</a>
-                        <span class="mlr5px">·</span>
-                        <a class="text_link_blue">Forgot password?</a>
-                    </div>
-                    <br>
-                    <span class="pt30px grey_mini_font">©2001–2018 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group. <a>Cookie Preferences</a>, <a>Privacy</a>, and <a>Terms</a>.</span>
-                </fieldset>
+                </div>
+                <input id="input__password" class="sidebar__form__input" type="password" autocomplete="on">
+                <button id="sidebar_form_button" class="form__button margin_top_50px" onclick="return false">Log In</button>
+                
+                <input id="form__checkbox" tabindex="0" type="checkbox">
+                <label for="form__checkbox" class="padding_top_bottom_30px select_none font_weight500 flex flex_XY_center">
+                <span>Keep me logged in</span>
+                </label>
+                <div class="flex flex_XY_center flex-wrap padding_bottom30px">
+                    <a href="#" class="color_blue">Forgot username?</a>
+                    <span>&nbsp·&nbsp</span>
+                    <a href="#" class="color_blue">Forgot password?</a>
+                </div>
+                <br>
+                <span class="font_size09em color_darkgrey">©2001–2018 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group. <a href="#">Cookie Preferences</a>, <a href="#">Privacy</a>, and <a href="#">Terms</a>.</span>
             </form>
         </div>
-        
-        <div class="picture">
-            <div class="picture-text">Segmentation helps this dynamic retail duo build<br> better customer relationships and sell more stuff.</div>
-            <a href="#" class="button_style">Learn Their Strategy</a>
+        <div class="rigth-side">
+            <div class="rigth-side-text">Segmentation helps this dynamic retail duo build<br> better customer relationships and sell more stuff.</div>
+            <a href="#" class="transparent__button margin_top_30px">Learn Their Strategy</a>
         </div>
     </div>   
     <script>
         var show_hide = true;
+        var messageError = false;
+        
         function changeEye(e) {
              if (show_hide) {
-                document.getElementById('id_input_password').type = "text";
-                id_show_hide.className = "far fa-eye-slash";
-                document.getElementById('id_show_hide_for_span').textContent = "Hide";
-                id_input_password.focus();
+                document.getElementById('input__password').type = "text";
+                input_graphic_label_icon_eye.className = "far fa-eye-slash";
+                document.getElementById('graphic_label_text').textContent = "Hide";
                 show_hide = false;
                
             } else {
-                document.getElementById('id_input_password').type = "password";
-                document.getElementById('id_show_hide').className = "far fa-eye";
-                document.getElementById('id_show_hide_for_span').textContent = "Show";
-                document.getElementById('id_input_password').focus();
+                document.getElementById('input__password').type = "password";
+                document.getElementById('input_graphic_label_icon_eye').className = "far fa-eye";
+                document.getElementById('graphic_label_text').textContent = "Show";
                 show_hide = true;
             }
+            document.getElementById('input__password').focus();
         }
-        document.getElementById("eye_and_text").addEventListener('click',changeEye);
+        
+        function valid(e) {
+            var email = document.getElementById('input__username').value;
+            var password = document.getElementById('input__password').value;
+            var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$/;
+            if (email == "" || email == " ") {
+                messageError = "Вы не ввели e-mail";
+                }
+            else {
+                if (password == "") {
+                    messageError = "Вы не ввели пароль";}
+                else {
+                if (!reg.test(email)) { 
+                    messageError = "Введите правильный e-mail";
+                    }
+                }
+            }
+            console.log(messageError);
+            if (messageError) {
+                document.getElementById('text-message-error').style.display = 'block';
+                document.getElementById('text-message-error').innerHTML = messageError;
+                messageError = false;
+            }
+            else {
+                document.getElementById('text-message-error').style.display = 'none';
+            }
+            console.log(messageError);
+        }
+        document.getElementById("input__graphic__label").addEventListener('click',changeEye);
+        document.getElementById("sidebar_form_button").addEventListener('click',valid);
     </script> 
 </body>
 </html>
